@@ -9,12 +9,12 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public abstract class BaseData<T> {
+abstract class BaseData<T> {
 
     /**
      * code
      */
-    protected int ret = BaseDataEnum.RET.i;
+    private int ret;
 
     /**
      * 数据

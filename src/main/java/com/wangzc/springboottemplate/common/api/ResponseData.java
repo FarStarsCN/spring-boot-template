@@ -7,27 +7,15 @@ package com.wangzc.springboottemplate.common.api;
  */
 public class ResponseData extends BaseData {
 
+    private ResponseData() {}
+
     private static ThreadLocal<ResponseData> local = ThreadLocal.withInitial(ResponseData::new);
 
     public static ResponseData getInstance() {
         return local.get();
     }
 
-    public static ResponseData getInstance(int ret, String msg) {
-        ResponseData responseData = local.get();
-        responseData.setRet(ret);
-        responseData.setMsg(msg);
-        return responseData;
-    }
-
-    public static<T> ResponseData getInstance(int ret, T data) {
-        ResponseData responseData = local.get();
-        responseData.setRet(ret);
-        responseData.setData(data);
-        return responseData;
-    }
-
-    public static<T> ResponseData getInstance(int ret, T data, String msg) {
+    static<T> ResponseData getInstance(int ret, T data, String msg) {
         ResponseData responseData = local.get();
         responseData.setRet(ret);
         responseData.setData(data);

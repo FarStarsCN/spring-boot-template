@@ -2,6 +2,7 @@ package com.wangzc.springboottemplate.controller;
 
 import com.wangzc.springboottemplate.common.api.ResponseData;
 import com.wangzc.springboottemplate.common.api.ResponseResult;
+import com.wangzc.springboottemplate.common.exception.MyRuntimeException;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,5 +36,11 @@ public class IndexController {
     @ResponseBody
     public ResponseData getResponseData(@RequestParam String msg) {
         return ResponseResult.toData(msg);
+    }
+
+    @ApiOperation("抛出异常")
+    @GetMapping("throwException")
+    public String throwException() {
+        throw new MyRuntimeException("服务器错误");
     }
 }
