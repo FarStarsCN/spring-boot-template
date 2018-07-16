@@ -5,6 +5,6 @@ package com.wangzc.springboottemplate.model.po;
  * @author wang_zc
  * @date 2018/7/10
  */
-interface IPO extends BasePO {
+public interface IPO extends BasePO {
     // ...
 }
