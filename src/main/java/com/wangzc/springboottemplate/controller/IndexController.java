@@ -41,6 +41,6 @@ public class IndexController {
     @ApiOperation("抛出异常")
     @GetMapping("throwException")
     public String throwException() {
-        throw new MyRuntimeException("服务器错误");
+        throw new MyRuntimeException("服务器异常");
     }
 }
